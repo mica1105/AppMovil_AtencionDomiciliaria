@@ -11,6 +11,9 @@
     <string name="menu_citas">Citas</string>
     <string name="menu_pacientes">Pacientes</string>
     <string name="menu_registros">Registros</string>
+    <string name="menu_salir">Cerrar Sesión</string>
+    <string name="nueva_cita">Nueva Cita</string>
+    <string name="hc">Historia Clínica</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

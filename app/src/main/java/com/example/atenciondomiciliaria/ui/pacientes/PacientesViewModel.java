@@ -1,16 +1,16 @@
-package com.example.atenciondomiciliaria.ui.gallery;
+package com.example.atenciondomiciliaria.ui.pacientes;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class PacientesViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public PacientesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is pacientes fragment");
     }
 
     public LiveData<String> getText() {

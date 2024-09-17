@@ -1,16 +1,16 @@
-package com.example.atenciondomiciliaria.ui.slideshow;
+package com.example.atenciondomiciliaria.ui.citas;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class CitasViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public CitasViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is citas fragment");
     }
 
     public LiveData<String> getText() {

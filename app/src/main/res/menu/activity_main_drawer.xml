@@ -7,7 +7,6 @@
         <item
             android:id="@+id/nav_perfil"
             android:icon="@drawable/equipo_medico"
-            android:iconTint="#3F51B5"
             android:iconTintMode="add"
             android:title="@string/menu_perfil" />
         <item
@@ -26,4 +25,14 @@
             android:iconTintMode="add"
             android:title="@string/menu_registros" />
     </group>
+    <item android:title="Salir">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/cerrar_sesion"
+                android:iconTintMode="add"
+                android:title="@string/menu_salir"/>
+        </menu>
+    </item>
+
 </menu>

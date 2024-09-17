@@ -1,35 +1,34 @@
 package com.example.atenciondomiciliaria.modelo;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 import java.util.Date;
 
-public class Enfermero implements Serializable {
+public class Paciente implements Serializable {
+
     private int id;
     private String nombre;
     private String apellido;
     private int dni;
-    private String telefono;
+    private Date fechaNacimiento;
     private String domicilio;
-    private String email;
-    private String password;
-    private String avatar;
+    private String telefono;
+    private Date fechaAlta;
+    private Date fechaModificacion;
     private Estado estado;
 
-    public Enfermero() {
+    public Paciente() {
     }
 
-    public Enfermero(int id, String nombre, String apellido, int dni, String telefono, String domicilio, String email, String password, String avatar, Estado estado) {
+    public Paciente(int id, String nombre, String apellido, int dni, Date fechaNacimiento, String domicilio, String telefono, Date fechaAlta, Date fechaModificacion, Estado estado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
         this.domicilio = domicilio;
-        this.email = email;
-        this.password = password;
-        this.avatar = avatar;
+        this.telefono = telefono;
+        this.fechaAlta = fechaAlta;
+        this.fechaModificacion = fechaModificacion;
         this.estado = estado;
     }
 
@@ -65,12 +64,12 @@ public class Enfermero implements Serializable {
         this.dni = dni;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getDomicilio() {
@@ -81,28 +80,28 @@ public class Enfermero implements Serializable {
         this.domicilio = domicilio;
     }
 
-    public String getEmail() {
-        return email;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getPassword() {
-        return password;
+    public Date getFechaAlta() {
+        return fechaAlta;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setFechaAlta(Date fechaAlta) {
+        this.fechaAlta = fechaAlta;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public Date getFechaModificacion() {
+        return fechaModificacion;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setFechaModificacion(Date fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
     }
 
     public Estado getEstado() {
