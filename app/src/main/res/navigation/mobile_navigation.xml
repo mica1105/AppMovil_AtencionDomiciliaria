@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_nav_citas_to_nuevaCitaFragment"
             app:destination="@id/nuevaCitaFragment" />
+        <action
+            android:id="@+id/action_nav_citas_to_listaCitasFragment"
+            app:destination="@id/listaCitasFragment" />
     </fragment>
 
     <fragment
@@ -73,6 +76,15 @@
         <action
             android:id="@+id/action_historiaClinicaFragment_to_nav_pacientes"
             app:destination="@id/nav_pacientes" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaCitasFragment"
+        android:name="com.example.atenciondomiciliaria.ui.citas.ListaCitasFragment"
+        android:label="@string/lista_citas"
+        tools:layout="@layout/fragment_lista_citas" >
+        <action
+            android:id="@+id/action_listaCitasFragment_to_nav_citas"
+            app:destination="@id/nav_citas" />
     </fragment>
 
 

@@ -39,13 +39,16 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitasViewHol
 
     @Override
     public void onBindViewHolder(@NonNull CitasViewHolder holder, int position) {
-        holder.tvCita.setText(citas.get(position).getHoraInicio()+" hs");
-        holder.tvPaciente.setText(citas.get(position).getPaciente().getNombre());
-        holder.tvTelefono.setText(citas.get(position).getPaciente().getTelefono());
-        holder.tvDireccion.setText(citas.get(position).getPaciente().getDomicilio());
+        Visita cita = citas.get(position);
+        String paciente = cita.getPaciente().getNombre()+" "+cita.getPaciente().getApellido();
+        holder.tvCita.setText(cita.convertirHora(cita.getInicioAtencion()));
+        holder.tvPaciente.setText(paciente);
+        holder.tvTelefono.setText(cita.getPaciente().getTelefono());
+        holder.tvDireccion.setText(cita.getPaciente().getDomicilio());
+
         holder.btnBorrar.setOnClickListener((view)->{
             citas.remove(position);
-            notifyDataSetChanged();
+            notifyItemRemoved(position);
         });
         holder.btnEditar.setOnClickListener((view)->{
             Bundle bundle = new Bundle();

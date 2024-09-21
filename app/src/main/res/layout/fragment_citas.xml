@@ -14,7 +14,7 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/celeste"/>
+        android:textColor="@color/purple_700"/>
 
     <CalendarView
         android:id="@+id/cvCitas"

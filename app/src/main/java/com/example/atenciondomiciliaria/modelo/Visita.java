@@ -2,6 +2,7 @@ package com.example.atenciondomiciliaria.modelo;
 
 import java.io.Serializable;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Visita implements Serializable {
@@ -9,20 +10,20 @@ public class Visita implements Serializable {
     private Paciente paciente;
     private Enfermero enfermero;
     private Date fecha;
-    private Time horaInicio;
-    private Time horaFin;
+    private String inicioAtencion;
+    private String finAtencion;
     private String prestaciones;
 
     public Visita() {
     }
 
-    public Visita(int id, Paciente paciente, Enfermero enfermero, Date fecha, Time horaInicio, Time horaFin, String prestaciones) {
+    public Visita(int id, Paciente paciente, Enfermero enfermero, Date fecha, String horaInicio, String horaFin, String prestaciones) {
         this.id = id;
         this.paciente = paciente;
         this.enfermero = enfermero;
         this.fecha = fecha;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
+        this.inicioAtencion = horaInicio;
+        this.finAtencion = horaFin;
         this.prestaciones = prestaciones;
     }
 
@@ -58,20 +59,20 @@ public class Visita implements Serializable {
         this.fecha = fecha;
     }
 
-    public Time getHoraInicio() {
-        return horaInicio;
+    public String getInicioAtencion() {
+        return inicioAtencion;
     }
 
-    public void setHoraInicio(Time horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setInicioAtencion(String inicioAtencion) {
+        this.inicioAtencion = inicioAtencion;
     }
 
-    public Time getHoraFin() {
-        return horaFin;
+    public String getFinAtencion() {
+        return finAtencion;
     }
 
-    public void setHoraFin(Time horaFin) {
-        this.horaFin = horaFin;
+    public void setFinAtencion(String finAtencion) {
+        this.finAtencion = finAtencion;
     }
 
     public String getPrestaciones() {
@@ -80,5 +81,14 @@ public class Visita implements Serializable {
 
     public void setPrestaciones(String prestaciones) {
         this.prestaciones = prestaciones;
+    }
+
+    public String convertirFecha(Date fecha){
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy"); // Defines el formato
+        return formato.format(fecha);
+    }
+
+    public String convertirHora(String hora){
+        return hora.substring(0,5)+"hs";
     }
 }
