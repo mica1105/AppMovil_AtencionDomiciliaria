@@ -28,6 +28,22 @@
         android:enabled="false"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/input"
+        android:padding="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv1"
@@ -54,8 +70,10 @@
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
-        android:hint="Diclofenac 50mg"
+        android:hint="Medicacion mg"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:background="@drawable/input"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,45 +94,58 @@
 
     <EditText
         android:id="@+id/etDosis"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
-        android:hint="5ml"
+        android:hint="0"
         android:gravity="center_horizontal"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:background="@drawable/input"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv3"
         app:layout_constraintTop_toBottomOf="@id/etMedicacion" />
 
+    <TextView
+        android:id="@+id/tvdosis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="mg"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/etDosis"
+        app:layout_constraintTop_toBottomOf="@+id/etMedicacion" />
 
     <TextView
         android:id="@+id/tv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
         android:layout_marginStart="15dp"
         android:text="Vía:"
         android:textSize="20sp"
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/etMedicacion"
-        app:layout_constraintStart_toEndOf="@+id/etDosis"/>
+        app:layout_constraintStart_toEndOf="@+id/tvdosis"/>
 
     <Spinner
         android:id="@+id/spinnerVia"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_width="139dp"
+        android:layout_height="40dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_fondocolor"
         android:gravity="center_horizontal"
-        android:background="@drawable/input"
-        android:spinnerMode="dropdown"
-        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv4"
-        app:layout_constraintTop_toBottomOf="@id/etMedicacion"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/etMedicacion" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -134,9 +165,10 @@
             android:id="@+id/etRA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:hint="Reacciones Adversas"
-            android:text="El paciente presento un enrojecimiento
-            en la zona de aplicacion y prurito"/>
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,9 +189,9 @@
             android:id="@+id/etObservaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Observaciones"
-            android:text="Se presentaron reacciones adversas locales,
-            sin complicaciones mayores"/>
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:hint="Observaciones" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -168,7 +200,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_fondocolor"
-        android:text="Guardar"
+        android:text=""
         android:textStyle="bold"
         android:textSize="18dp"
         android:layout_marginTop="50dp"

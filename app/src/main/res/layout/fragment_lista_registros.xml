@@ -6,11 +6,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.registro.ListaRegistrosFragment">
 
+    <EditText
+        android:id="@+id/etDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:background="@drawable/btn_fondocolor"
+        android:hint="Descripcion"
+        android:inputType="text"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaRegistros"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescripcion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

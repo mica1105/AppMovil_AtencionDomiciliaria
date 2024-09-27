@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvListaRegistros"
     app:contentPadding="10dp"
+    android:layout_margin="10dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp"
     android:backgroundTint="@color/teal_700">
@@ -12,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="10dp"
         android:background="@color/celeste_claro">
 
         <TextView
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jose Lopez"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textAlignment="center"
             android:textStyle="bold"
@@ -32,8 +34,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+
             android:text="DNI: 30202020"
+            android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPaciente" />
@@ -43,8 +48,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textColor="@color/black"
             android:text="Fecha: 01/01/2000"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@id/tvPaciente"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -56,23 +63,36 @@
             android:layout_marginTop="10dp"
             android:drawableStart="@drawable/ic_observaciones"
             android:text=" Observaciones:"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@id/tvDni"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
         <TextView
             android:id="@+id/tvObservaciones"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:textAlignment="gravity"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/black"
             android:text="Aqui se escribiran las observaciones del paciente."
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@id/tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageButton
+            android:id="@+id/ibBorrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_borrar"
+            android:background="@drawable/ciculo_imagen"
+            android:backgroundTint="@color/rojo"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvObservaciones"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

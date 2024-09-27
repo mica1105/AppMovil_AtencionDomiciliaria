@@ -42,7 +42,23 @@
         android:id="@+id/nav_registros"
         android:name="com.example.atenciondomiciliaria.ui.registro.RegistrosFragment"
         android:label="@string/menu_registros"
-        tools:layout="@layout/fragment_registros" />
+        tools:layout="@layout/fragment_registros" >
+        <action
+            android:id="@+id/action_nav_registros_to_listaRegistrosFragment"
+            app:destination="@id/listaRegistrosFragment" />
+        <action
+            android:id="@+id/action_nav_registros_to_admDeFarmacosFragment"
+            app:destination="@id/admDeFarmacosFragment" />
+        <action
+            android:id="@+id/action_nav_registros_to_csvFragment"
+            app:destination="@id/csvFragment" />
+        <action
+            android:id="@+id/action_nav_registros_to_curacionesFragment"
+            app:destination="@id/curacionesFragment" />
+        <action
+            android:id="@+id/action_nav_registros_to_higieneFragment"
+            app:destination="@id/higieneFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_logout"
@@ -53,7 +69,7 @@
     <fragment
         android:id="@+id/cambiarClaveFragment"
         android:name="com.example.atenciondomiciliaria.ui.perfil.CambiarClaveFragment"
-        android:label="Cambiar Clave"
+        android:label="@string/cambiar_clave"
         tools:layout="@layout/fragment_cambiar_clave">
         <action
             android:id="@+id/action_cambiarClaveFragment_to_nav_perfil"
@@ -83,8 +99,80 @@
         android:label="@string/lista_citas"
         tools:layout="@layout/fragment_lista_citas" >
         <action
+            android:id="@+id/action_listaCitasFragment_to_nav_registros"
+            app:destination="@id/nav_registros" />
+        <action
             android:id="@+id/action_listaCitasFragment_to_nav_citas"
             app:destination="@id/nav_citas" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaRegistrosFragment"
+        android:name="com.example.atenciondomiciliaria.ui.registro.ListaRegistrosFragment"
+        android:label="@string/menu_registros"
+        tools:layout="@layout/fragment_lista_registros" >
+        <action
+            android:id="@+id/action_listaRegistrosFragment_to_nav_registros"
+            app:destination="@id/nav_registros" />
+        <action
+            android:id="@+id/action_listaRegistrosFragment_to_curacionesFragment"
+            app:destination="@id/curacionesFragment" />
+        <action
+            android:id="@+id/action_listaRegistrosFragment_to_higieneFragment"
+            app:destination="@id/higieneFragment" />
+        <action
+            android:id="@+id/action_listaRegistrosFragment_to_admDeFarmacosFragment"
+            app:destination="@id/admDeFarmacosFragment" />
+        <action
+            android:id="@+id/action_listaRegistrosFragment_to_csvFragment"
+            app:destination="@id/csvFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/admDeFarmacosFragment"
+        android:name="com.example.atenciondomiciliaria.ui.registro.AdmDeFarmacos.AdmDeFarmacosFragment"
+        android:label="@string/adm_de_farmacos"
+        tools:layout="@layout/fragment_adm_de_farmacos" >
+        <action
+            android:id="@+id/action_admDeFarmacosFragment_to_nav_registros"
+            app:destination="@id/nav_registros" />
+        <action
+            android:id="@+id/action_admDeFarmacosFragment_to_listaRegistrosFragment"
+            app:destination="@id/listaRegistrosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/csvFragment"
+        android:name="com.example.atenciondomiciliaria.ui.registro.CSV.CsvFragment"
+        android:label="@string/csv"
+        tools:layout="@layout/fragment_csv" >
+        <action
+            android:id="@+id/action_csvFragment_to_nav_registros"
+            app:destination="@id/nav_registros" />
+        <action
+            android:id="@+id/action_csvFragment_to_listaRegistrosFragment"
+            app:destination="@id/listaRegistrosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/curacionesFragment"
+        android:name="com.example.atenciondomiciliaria.ui.registro.Curaciones.CuracionesFragment"
+        android:label="@string/curaciones"
+        tools:layout="@layout/fragment_curaciones" >
+        <action
+            android:id="@+id/action_curacionesFragment_to_nav_registros"
+            app:destination="@id/nav_registros" />
+        <action
+            android:id="@+id/action_curacionesFragment_to_listaRegistrosFragment"
+            app:destination="@id/listaRegistrosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/higieneFragment"
+        android:name="com.example.atenciondomiciliaria.ui.registro.Higiene.HigieneFragment"
+        android:label="@string/hyc"
+        tools:layout="@layout/fragment_higiene" >
+        <action
+            android:id="@+id/action_higieneFragment_to_nav_registros"
+            app:destination="@id/nav_registros" />
+        <action
+            android:id="@+id/action_higieneFragment_to_listaRegistrosFragment"
+            app:destination="@id/listaRegistrosFragment" />
     </fragment>
 
 

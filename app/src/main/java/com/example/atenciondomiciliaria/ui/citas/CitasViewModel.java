@@ -45,13 +45,9 @@ public class CitasViewModel extends AndroidViewModel {
             public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()){
                     Integer cantidad= response.body();
-                    String anio = fecha.substring(0,4);
-                    String mes = fecha.substring(5, 6);
-                    String dia = fecha.substring(7, 9);
-
-                    String fechaConvertida = dia + "-" + mes + "-" + anio;
-
-                    textoBoton.postValue(fechaConvertida+"\nCitas perdientes: "+cantidad);
+                    String[] partes = fecha.split("-");
+                    String fechaFormateada = partes[2] + "-" + partes[1] + "-" + partes[0];
+                    textoBoton.postValue(fechaFormateada+"\nCitas perdientes: "+cantidad);
                 } else {
                     textoBoton.postValue("Error en la conexión");
                 }

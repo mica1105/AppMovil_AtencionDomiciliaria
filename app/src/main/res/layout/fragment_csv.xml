@@ -24,7 +24,21 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:background="@drawable/input"
+        android:gravity="center_horizontal"
         android:hint="Nombre del Paciente"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
         android:background="@drawable/input"
@@ -47,16 +61,27 @@
 
     <EditText
         android:id="@+id/etTA"
-        android:layout_width="140dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/input"
         android:gravity="center_horizontal"
-        android:hint="130/80 mmHg"
+        android:hint="000/00"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv2"
+        app:layout_constraintTop_toBottomOf="@id/etPaciente" />
+
+    <TextView
+        android:id="@+id/tvTa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="mmHg"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/etTA"
         app:layout_constraintTop_toBottomOf="@id/etPaciente" />
 
     <TextView
@@ -72,18 +97,30 @@
         app:layout_constraintTop_toBottomOf="@id/etPaciente"
         app:layout_constraintEnd_toStartOf="@id/etFC"/>
 
+
     <EditText
         android:id="@+id/etFC"
-        android:layout_width="120dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/input"
         android:gravity="center_horizontal"
-        android:hint="84 lx'"
-        android:inputType="textPersonName"
+        android:hint="00"
+        android:inputType="number"
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvfc"
         app:layout_constraintTop_toBottomOf="@id/etPaciente" />
+
+    <TextView
+        android:id="@+id/tvfc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="lx'"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPaciente" />
 
     <TextView
         android:id="@+id/tv4"
@@ -99,17 +136,28 @@
 
     <EditText
         android:id="@+id/etSo2"
-        android:layout_width="120dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
-        android:hint="98%"
+        android:hint="00"
         android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv4"
         app:layout_constraintTop_toBottomOf="@id/etTA" />
+
+    <TextView
+        android:id="@+id/tvSo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="%"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/etSo2"
+        app:layout_constraintTop_toBottomOf="@id/tvTa" />
 
     <TextView
         android:id="@+id/tv5"
@@ -126,17 +174,28 @@
 
     <EditText
         android:id="@+id/etTemp"
-        android:layout_width="120dp"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="5dp"
-        android:gravity="center_horizontal"
-        android:hint="36.8°C"
-        android:inputType="textPersonName"
+        android:layout_marginTop="12dp"
         android:background="@drawable/input"
+        android:gravity="center_horizontal"
+        android:hint="00.0"
+        android:inputType="numberDecimal"
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvTemp"
         app:layout_constraintTop_toBottomOf="@id/etFC" />
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="°C"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvfc" />
 
     <TextView
         android:id="@+id/tv6"
@@ -152,17 +211,28 @@
 
     <EditText
         android:id="@+id/etGlucemia"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
-        android:hint="150 mg/dL"
-        android:inputType="textPersonName"
+        android:hint="000"
+        android:inputType="number"
         android:background="@drawable/input"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv6"
         app:layout_constraintTop_toBottomOf="@id/etSo2" />
+
+    <TextView
+        android:id="@+id/tvHgt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="mg/dl"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/etGlucemia"
+        app:layout_constraintTop_toBottomOf="@id/tvSo" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -183,8 +253,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Observaciones"
-            android:text="TA elevada, se indaga en la toma de la medicacion.\nGlucemia
-             elevada, se administra correccion segun indicacion"/>
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
     <Button

@@ -41,17 +41,15 @@ public class ListaCitasFragment extends Fragment {
     private void inicializar(View root) {
         Bundle bundle= getArguments();
         String fecha= bundle.getString("fecha");
-        String anio = fecha.substring(0,4);
-        String mes = fecha.substring(5, 6);
-        String dia = fecha.substring(7, 9);
+        String[] partes = fecha.split("-");
+        String fechaFormateada = partes[2] + "-" + partes[1] + "-" + partes[0];
 
-        String fechaConvertida = dia + "-" + mes + "-" + anio;
-        binding.tvFecha.setText(fechaConvertida);
+        binding.tvFecha.setText(fechaFormateada);
         mViewModel= new ViewModelProvider(this).get(ListaCitasViewModel.class);
         mViewModel.getCitas().observe(getViewLifecycleOwner(), visitas -> {
             GridLayoutManager gridLayoutManager= new GridLayoutManager(context,1, GridLayoutManager.VERTICAL,false);
             binding.rvCitas.setLayoutManager(gridLayoutManager);
-            adapter= new CitasAdapter(context,visitas,getLayoutInflater());
+            adapter= new CitasAdapter(context,visitas);
             binding.rvCitas.setAdapter(adapter);
         });
         mViewModel.cargarCitas(fecha);

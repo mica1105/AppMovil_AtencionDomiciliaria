@@ -2,63 +2,36 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.perfil.PerfilFragment">
-
-
-    <TextView
-        android:id="@+id/tvCodigo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:text="Código:"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
-
-    <EditText
-        android:id="@+id/etCodigo"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="4dp"
-        android:autofillHints=""
-        android:enabled="false"
-        android:inputType="number"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/etDni"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCodigo" />
+    android:background="@drawable/fondo_degragado"
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/tvDni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="8dp"
         android:text="Nro de DNI:"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="@id/tvCodigo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etDni"
-        android:layout_width="131dp"
-        android:layout_height="44dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginEnd="52dp"
         android:backgroundTint="@color/purple_700"
-        android:enabled="false"
         android:inputType="number"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDni" />
 
     <TextView
@@ -77,13 +50,12 @@
         android:id="@+id/etApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:layout_marginStart="52dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="52dp"
-        android:textStyle="bold"
-        android:enabled="false"
-        android:inputType="text"
         android:backgroundTint="@color/purple_700"
+        android:inputType="text"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvApellido" />
 
@@ -104,9 +76,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
-        android:enabled="false"
+        android:layout_marginEnd="52dp"
         android:backgroundTint="@color/purple_700"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,39 +100,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
-        android:enabled="false"
+        android:layout_marginEnd="52dp"
         android:backgroundTint="@color/purple_700"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDomicilio" />
-
-    <TextView
-        android:id="@+id/tvTelefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:text="Telefono:"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDomicilio" />
-
-    <EditText
-        android:id="@+id/etTelefono"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginTop="2dp"
-        android:inputType="phone"
-        android:enabled="false"
-        android:backgroundTint="@color/purple_700"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
 
     <TextView
         android:id="@+id/tvEmail"
@@ -173,17 +117,18 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTelefono" />
+        app:layout_constraintTop_toBottomOf="@+id/etDomicilio" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
-        android:enabled="false"
+        android:layout_marginEnd="52dp"
         android:textStyle="bold"
+        android:inputType="textEmailAddress"
+        android:backgroundTint="@color/purple_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
@@ -204,67 +149,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
-        android:enabled="false"
+        android:layout_marginEnd="52dp"
         android:backgroundTint="@color/purple_700"
-        android:textStyle="bold"
         android:inputType="textPassword"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
-    <ImageButton
-        android:id="@+id/btEditarClave"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="488dp"
-        android:background="@drawable/btn_fondocolor"
-        android:src="@drawable/ic_edit"
-        app:layout_constraintStart_toEndOf="@+id/etPassword"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivFotoPerfil"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/ic_menu_camera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"/>
-
-    <ImageButton
-        android:id="@+id/btEditarImagen"
+    <TextView
+        android:id="@+id/tvErrores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:background="@drawable/ciculo_imagen"
-        android:backgroundTint="@color/teal_700"
-        android:padding="9dp"
+        android:text="TextView"
+        android:textSize="15dp"
+        android:textColor="#ff0000"
         android:visibility="gone"
-        android:src="@drawable/ic_subir_imagen"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ivFotoPerfil"
-        app:layout_constraintTop_toBottomOf="@id/etPassword" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <Button
         android:id="@+id/btEditar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="52dp"
-        android:text="Editar"
         android:background="@drawable/btn_fondocolor"
         android:elevation="5dp"
+        android:padding="7dp"
+        android:text="Editar"
         android:textColor="@color/white"
         android:textSize="16dp"
-        android:padding="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFotoPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/tvErrores" />
+
+    <Button
+        android:id="@+id/btAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#4356BC"
+        android:drawableEnd="@android:drawable/ic_menu_revert"
+        android:text="Atras"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

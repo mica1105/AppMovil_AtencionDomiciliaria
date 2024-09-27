@@ -15,6 +15,12 @@
     <string name="nueva_cita">Nueva Cita</string>
     <string name="hc">Historia Clínica</string>
     <string name="lista_citas">Agenda de Citas</string>
+    <string name="cambiar_clave">Cambiar Clave</string>
+    <string name="adm_de_farmacos">Administración de Farmacos</string>
+    <string name="curaciones">Curaciones</string>
+    <string name="hyc">Higiene y Confort</string>
+    <string name="csv">Control de Signos Vitales</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

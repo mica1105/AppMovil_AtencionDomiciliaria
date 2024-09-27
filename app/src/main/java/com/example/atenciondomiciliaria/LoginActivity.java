@@ -1,9 +1,16 @@
 package com.example.atenciondomiciliaria;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         inicializar();
     }
+
      private void inicializar(){
         loginViewModel= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(LoginViewModel.class);
         loginViewModel.getError().observe(this, new Observer<String>() {
@@ -43,6 +51,27 @@ public class LoginActivity extends AppCompatActivity {
                 binding.etPass.setText("");
             }
         });
+         String text = "¿No tienes una cuenta? Regístrate";
+         SpannableString spannableString = new SpannableString(text);
+
+         ClickableSpan clickableSpan= new ClickableSpan() {
+
+             @Override
+             public void onClick(@NonNull View widget) {
+                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                 startActivity(intent);
+             }
+
+             @Override
+             public  void updateDrawState(@NonNull TextPaint ds) {
+                 super.updateDrawState(ds);
+                 ds.setUnderlineText(true);
+             }
+         };
+         spannableString.setSpan(clickableSpan, 23, 33, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+         binding.tvRegistrar.setText(spannableString);
+         binding.tvRegistrar.setMovementMethod(LinkMovementMethod.getInstance());;
      }
      
 }

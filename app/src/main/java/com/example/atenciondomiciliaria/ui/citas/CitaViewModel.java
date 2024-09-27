@@ -66,16 +66,16 @@ public class CitaViewModel extends AndroidViewModel {
         });
     }
 
-    public void crearVisita(Visita visita) {
+    public void crearVisita(Visita visita, String fecha) {
         String token= ApiClientRetrofit.leerToken(context);
         ApiClientRetrofit.ApiAtencionDomiciliaria api= ApiClientRetrofit.getApiAtencionDomiciliaria();
-        Call<Visita> call= api.nuevaCita(token, visita);
+        Call<Visita> call= api.nuevaCita(token, visita, fecha);
         call.enqueue(new Callback<Visita>() {
             @Override
             public void onResponse(Call<Visita> call, Response<Visita> response) {
                 if(response.isSuccessful()){
                     Visita cita= response.body();
-                    mensaje.setValue("Cita creada: Fecha "+ cita.convertirFecha(cita.getFecha())
+                    mensaje.setValue("Cita creada: Fecha "+ cita.convertirFecha(cita.getFechaAtencion())
                             +" Hora: "+cita.convertirHora(cita.getInicioAtencion()));
                 } else {
                     Log.d("salida respuesta: ", response.raw().message());

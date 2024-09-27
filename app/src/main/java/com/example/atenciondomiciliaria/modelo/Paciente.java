@@ -9,17 +9,22 @@ public class Paciente implements Serializable {
     private String nombre;
     private String apellido;
     private int dni;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String domicilio;
     private String telefono;
-    private Date fechaAlta;
-    private Date fechaModificacion;
+    private String fechaAlta;
+    private String fechaModificacion;
     private Estado estado;
 
     public Paciente() {
     }
+    public Paciente(int id, String nombre, String apellido){
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
-    public Paciente(int id, String nombre, String apellido, int dni, Date fechaNacimiento, String domicilio, String telefono, Date fechaAlta, Date fechaModificacion, Estado estado) {
+    public Paciente(int id, String nombre, String apellido, int dni, String fechaNacimiento, String domicilio, String telefono, String fechaAlta, String fechaModificacion, Estado estado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -64,12 +69,28 @@ public class Paciente implements Serializable {
         this.dni = dni;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getFechaAlta() {
+        return fechaAlta;
+    }
+
+    public void setFechaAlta(String fechaAlta) {
+        this.fechaAlta = fechaAlta;
+    }
+
+    public String getFechaModificacion() {
+        return fechaModificacion;
+    }
+
+    public void setFechaModificacion(String fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
     }
 
     public String getDomicilio() {
@@ -88,27 +109,16 @@ public class Paciente implements Serializable {
         this.telefono = telefono;
     }
 
-    public Date getFechaAlta() {
-        return fechaAlta;
-    }
-
-    public void setFechaAlta(Date fechaAlta) {
-        this.fechaAlta = fechaAlta;
-    }
-
-    public Date getFechaModificacion() {
-        return fechaModificacion;
-    }
-
-    public void setFechaModificacion(Date fechaModificacion) {
-        this.fechaModificacion = fechaModificacion;
-    }
-
     public Estado getEstado() {
         return estado;
     }
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    public String convertirFecha(String fecha){
+        String[] partes = fecha.split("-");
+        return partes[2] + "-" + partes[1] + "-" + partes[0];
     }
 }

@@ -7,15 +7,16 @@ public class AdmDeFarmacos implements Serializable {
     private int id;
     private String via;
     private String medicacion;
-    private double dosis;
+    private float dosis;
     private String ra;
     private String observaciones;
     private Visita visita;
+    private int visitaId;
 
     public AdmDeFarmacos() {
     }
 
-    public AdmDeFarmacos(int id, String via, String medicacion, float dosis, String ra, String observaciones, Visita visita) {
+    public AdmDeFarmacos(int id, String via, String medicacion, float dosis, String ra, String observaciones, Visita visita, int visitaId) {
         this.id = id;
         this.via = via;
         this.medicacion = medicacion;
@@ -23,6 +24,7 @@ public class AdmDeFarmacos implements Serializable {
         this.ra = ra;
         this.observaciones = observaciones;
         this.visita = visita;
+        this.visitaId = visitaId;
     }
 
     public int getId() {
@@ -49,11 +51,11 @@ public class AdmDeFarmacos implements Serializable {
         this.medicacion = medicacion;
     }
 
-    public double getDosis() {
+    public float getDosis() {
         return dosis;
     }
 
-    public void setDosis(double dosis) {
+    public void setDosis(float dosis) {
         this.dosis = dosis;
     }
 
@@ -79,5 +81,13 @@ public class AdmDeFarmacos implements Serializable {
 
     public void setVisita(Visita visita) {
         this.visita = visita;
+    }
+
+    public int getVisitaId() {
+        return visitaId;
+    }
+
+    public void setVisitaId(int visitaId) {
+        this.visitaId = visitaId;
     }
 }

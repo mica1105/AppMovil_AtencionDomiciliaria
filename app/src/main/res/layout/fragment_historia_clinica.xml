@@ -21,13 +21,16 @@
 
     <EditText
         android:id="@+id/etPaciente"
-        android:layout_width="280dp"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:hint="Nombre del Paciente"
         android:gravity="center_horizontal"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:maxLines="2"
         android:background="@drawable/input"
+        android:textColor="@color/black"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv1"
         app:layout_constraintTop_toTopOf="parent"
@@ -53,6 +56,7 @@
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
         android:hint="00/00/0000"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
@@ -80,6 +84,7 @@
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
         android:hint="00000000"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
@@ -98,20 +103,23 @@
         app:layout_constraintTop_toBottomOf="@id/tv2"
         app:layout_constraintStart_toStartOf="parent"/>
 
+
     <EditText
         android:id="@+id/etDiagnostico"
-        android:layout_width="256dp"
+        android:layout_width="251dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
-        android:hint="Diagnostico"
-        android:gravity="center_horizontal"
-        android:inputType="textPersonName"
         android:background="@drawable/input"
+        android:gravity="center_horizontal"
+        android:hint="Diagnostico"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:maxLines="5"
+        android:textColor="@color/black"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv4"
         app:layout_constraintTop_toBottomOf="@id/etDni" />
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTratamiento"
@@ -130,10 +138,7 @@
             android:id="@+id/etTratamiento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Medicacion"
-            android:text="Rosuvastatina 20mg, Levotiroxina Sódica 75mcg, Nebivolol 5mg,
-            Losartan 50mg, Clonazepam 0,5mg, Sertralina 100mg, Paracetamol 1g,
-            Omeprazol 20mg"/>
+            android:hint="Medicacion" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -184,9 +189,9 @@
 
     <TextView
         android:id="@+id/tv6"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Enfermedades Cronicas:"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -216,7 +221,7 @@
         android:id="@+id/tv7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="32dp"
         android:text="Alergias:"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -226,13 +231,16 @@
 
     <EditText
         android:id="@+id/etAlergias"
-        android:layout_width="295dp"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="23dp"
         android:hint="Alergias"
+        android:textColor="@color/black"
         android:gravity="center_horizontal"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:maxLines="5"
         android:background="@drawable/input"
         android:padding="8dp"
         app:layout_constraintStart_toEndOf="@+id/tv7"
@@ -252,13 +260,16 @@
 
     <EditText
         android:id="@+id/etTraumas"
-        android:layout_width="290dp"
+        android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:hint="Diagnostico"
+        android:hint="Traumas"
+        android:textColor="@color/black"
         android:gravity="center_horizontal"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:maxLines="5"
         android:background="@drawable/input"
         android:padding="8dp"
         app:layout_constraintStart_toEndOf="@+id/tv8"
@@ -278,15 +289,20 @@
 
     <EditText
         android:id="@+id/etCirugias"
-        android:layout_width="295dp"
+        android:layout_width="292dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:hint="Diagnostico"
+        android:hint="Cirugias"
+        android:textColor="@color/black"
         android:gravity="center_horizontal"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:maxLines="5"
+        android:scrollbars="vertical"
         android:background="@drawable/input"
         android:padding="8dp"
+
         app:layout_constraintStart_toEndOf="@+id/tv9"
         app:layout_constraintTop_toBottomOf="@id/etTraumas" />
 

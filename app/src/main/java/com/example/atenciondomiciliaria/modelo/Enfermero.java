@@ -1,9 +1,12 @@
 package com.example.atenciondomiciliaria.modelo;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 public class Enfermero implements Serializable {
     private int id;
@@ -16,11 +19,12 @@ public class Enfermero implements Serializable {
     private String password;
     private String avatar;
     private Estado estado;
+    private int estadoId;
 
     public Enfermero() {
     }
 
-    public Enfermero(int id, String nombre, String apellido, int dni, String telefono, String domicilio, String email, String password, String avatar, Estado estado) {
+    public Enfermero(int id, String nombre, String apellido, int dni, String telefono, String domicilio, String email, String password, String avatar, Estado estado, int estadoId) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -31,6 +35,7 @@ public class Enfermero implements Serializable {
         this.password = password;
         this.avatar = avatar;
         this.estado = estado;
+        this.estadoId= estadoId;
     }
 
     public int getId() {
@@ -112,4 +117,39 @@ public class Enfermero implements Serializable {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+
+    public int getEstadoId() {
+        return estadoId;
+    }
+
+    public void setEstadoId(int estadoId) {
+        this.estadoId = estadoId;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Enfermero enfermero = (Enfermero) obj;
+        return id == enfermero.id &&
+                dni == enfermero.dni &&
+                Objects.equals(nombre, enfermero.nombre) &&
+                Objects.equals(apellido, enfermero.apellido) &&
+                Objects.equals(telefono, enfermero.telefono) &&
+                Objects.equals(domicilio, enfermero.domicilio) &&
+                Objects.equals(email, enfermero.email) &&
+                Objects.equals(password, enfermero.password) &&
+                Objects.equals(avatar, enfermero.avatar) &&
+                Objects.equals(estado, enfermero.estado);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dni, nombre, apellido, telefono, domicilio, email, password, avatar, estado);
+    }
+
 }

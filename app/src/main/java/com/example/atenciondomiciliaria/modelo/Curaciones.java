@@ -7,27 +7,29 @@ public class Curaciones implements Serializable {
     private String tipo;
     private String ubicacion;
     private String clase;
-    private float tamaño;
+    private float tamanio;
     private String bordes;
     private String signosInfeccion;
     private String dolor;
     private String observaciones;
     private Visita visita;
+    private int visitaId;
 
     public Curaciones() {
     }
 
-    public Curaciones(int id, String tipo, String ubicacion, String clase, float tamaño, String bordes, String signosInfeccion, String dolor, String observaciones, Visita visita) {
+    public Curaciones(int id, String tipo, String ubicacion, String clase, float tamanio, String bordes, String signosInfeccion, String dolor, String observaciones, Visita visita, int v) {
         this.id = id;
         this.tipo = tipo;
         this.ubicacion= ubicacion;
         this.clase = clase;
-        this.tamaño = tamaño;
+        this.tamanio = tamanio;
         this.bordes = bordes;
         this.signosInfeccion = signosInfeccion;
         this.dolor = dolor;
         this.observaciones = observaciones;
         this.visita = visita;
+        this.visitaId = v;
     }
 
     public int getId() {
@@ -62,12 +64,12 @@ public class Curaciones implements Serializable {
         this.clase = clase;
     }
 
-    public float getTamaño() {
-        return tamaño;
+    public float getTamanio() {
+        return tamanio;
     }
 
-    public void setTamaño(float tamaño) {
-        this.tamaño = tamaño;
+    public void setTamanio(float tamaño) {
+        this.tamanio = tamanio;
     }
 
     public String getBordes() {
@@ -108,5 +110,13 @@ public class Curaciones implements Serializable {
 
     public void setVisita(Visita visita) {
         this.visita = visita;
+    }
+
+    public int getVisitaId() {
+        return visitaId;
+    }
+
+    public void setVisitaId(int visitaId) {
+        this.visitaId = visitaId;
     }
 }

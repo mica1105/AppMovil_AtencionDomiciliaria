@@ -11,11 +11,12 @@ public class Csv implements Serializable {
   private int hgt;
   private String observaciones;
   private Visita visita;
+  private int visitaId;
 
   public Csv() {
 
   }
-  public Csv(int id, String ta, int fc, int so2, float temp, int hgt, String observaciones, Visita visita) {
+  public Csv(int id, String ta, int fc, int so2, float temp, int hgt, String observaciones, Visita visita, int visitaId) {
     this.id = id;
     this.ta = ta;
     this.fc = fc;
@@ -24,6 +25,7 @@ public class Csv implements Serializable {
     this.hgt = hgt;
     this.observaciones = observaciones;
     this.visita = visita;
+    this.visitaId = visitaId;
   }
 
     public int getId() {
@@ -88,5 +90,13 @@ public class Csv implements Serializable {
 
     public void setVisita(Visita visita) {
         this.visita = visita;
+    }
+
+    public int getVisitaId() {
+        return visitaId;
+    }
+
+    public void setVisitaId(int visitaId) {
+        this.visitaId = visitaId;
     }
 }

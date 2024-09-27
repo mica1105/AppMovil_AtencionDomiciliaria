@@ -33,6 +33,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/tv4"
         android:layout_width="wrap_content"
@@ -76,8 +87,7 @@
             android:id="@+id/etMateriales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Materiales"
-            android:text="Proporcionados por el paciente"/>
+            android:hint="Materiales" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <CheckBox
-        android:id="@+id/cbPañales"
+        android:id="@+id/cbPaniales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -113,7 +123,7 @@
         android:textSize="15dp"
         android:text="Sonda Vesical"
         app:layout_constraintTop_toBottomOf="@id/tilMateriales"
-        app:layout_constraintStart_toEndOf="@id/cbPañales"
+        app:layout_constraintStart_toEndOf="@id/cbPaniales"
         app:layout_constraintEnd_toStartOf="@id/cbSNG"/>
 
     <CheckBox
@@ -143,8 +153,7 @@
             android:id="@+id/etObservaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Observaciones"
-            android:text="Sin Observaciones"/>
+            android:hint="Observaciones" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

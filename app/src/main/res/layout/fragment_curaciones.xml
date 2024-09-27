@@ -34,13 +34,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:background="@drawable/input"
+        android:padding="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/tv2"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
-        android:text="Tipo de Curacion"
+        android:text="Tipo de Herida"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/tv1"
@@ -53,7 +67,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
-        android:hint="Herida Quirurgica"
+        android:hint="Herida"
         android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
@@ -80,7 +94,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
-        android:hint="Muslo del MMII derecho"
+        android:hint="Ubicacion"
         android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
@@ -101,19 +115,29 @@
         app:layout_constraintTop_toBottomOf="@id/tv3" />
 
     <EditText
-        android:id="@+id/etTamaño"
-        android:layout_width="100dp"
+        android:id="@+id/etTamanio"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
-        android:hint="5ml"
-        android:gravity="center_horizontal"
-        android:inputType="textPersonName"
         android:background="@drawable/input"
+        android:gravity="center_horizontal"
+        android:hint="00"
+        android:inputType="numberDecimal"
         android:padding="10dp"
         app:layout_constraintStart_toEndOf="@+id/tv4"
         app:layout_constraintTop_toBottomOf="@id/etUbicacion" />
 
+    <TextView
+        android:id="@+id/tvMedida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="cm"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/etTamanio"
+        app:layout_constraintTop_toBottomOf="@id/etUbicacion" />
 
     <TextView
         android:id="@+id/tv5"
@@ -126,7 +150,7 @@
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/etUbicacion"
-        app:layout_constraintStart_toEndOf="@+id/etTamaño"/>
+        app:layout_constraintStart_toEndOf="@+id/tvMedida"/>
 
     <Spinner
         android:id="@+id/spinnerClase"
@@ -161,12 +185,12 @@
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
-        android:hint="Suturados y rosados"
+        android:hint="Bordes"
         android:inputType="textPersonName"
         android:background="@drawable/input"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etTamaño"
+        app:layout_constraintTop_toBottomOf="@id/etTamanio"
         app:layout_constraintStart_toEndOf="@+id/tv7"/>
 
     <TextView
@@ -213,8 +237,7 @@
             android:id="@+id/etInfeccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Signos de Infección"
-            android:text="No presenta"/>
+            android:hint="Signos de Infección" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -235,8 +258,7 @@
             android:id="@+id/etObservaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Observaciones"
-            android:text="Sin Observaciones"/>
+            android:hint="Observaciones" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
